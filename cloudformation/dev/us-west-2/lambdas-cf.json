@@ -1,0 +1,46 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Description": "jaws-test lambdas",
+  "Parameters": {
+    "aaLambdaRoleArn": {
+      "Type": "String",
+      "Default": "arn:aws:iam::841384679316:role/dev-jaws-test-r-IamRoleLambda-1J8GBE814LXXI"
+    }
+  },
+  "Resources": {
+    "lAwsmImagesThumbnail": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Description": "",
+        "Handler": "aws_modules/awsm-images/thumbnail/handler.handler",
+        "MemorySize": 1024,
+        "Runtime": "nodejs",
+        "Timeout": 6,
+        "Code": {
+          "S3Bucket": "jaws.dev.uswest2.stapin.com",
+          "S3Key": "JAWS/jaws-test/dev/lambdas/lAwsmImagesThumbnail@1445274822183.zip"
+        },
+        "Role": {
+          "Ref": "aaLambdaRoleArn"
+        }
+      }
+    },
+    "lGreetingsHello": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Description": "",
+        "Handler": "aws_modules/greetings/hello/handler.handler",
+        "MemorySize": 1024,
+        "Runtime": "nodejs",
+        "Timeout": 6,
+        "Code": {
+          "S3Bucket": "jaws.dev.uswest2.stapin.com",
+          "S3Key": "JAWS/jaws-test/dev/lambdas/lGreetingsHello@1445274823907.zip"
+        },
+        "Role": {
+          "Ref": "aaLambdaRoleArn"
+        }
+      }
+    }
+  }
+}

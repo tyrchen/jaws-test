@@ -1,0 +1,19 @@
+{
+  "name": "jaws-test",
+  "version": "0.0.1",
+  "location": "https://github.com/...",
+  "author": "",
+  "description": "",
+  "domain": "stapin.com",
+  "stages": {
+    "dev": [
+      {
+        "region": "us-west-2",
+        "iamRoleArnLambda": "arn:aws:iam::841384679316:role/dev-jaws-test-r-IamRoleLambda-1J8GBE814LXXI",
+        "iamRoleArnApiGateway": "arn:aws:iam::841384679316:role/dev-jaws-test-r-IamRoleApiGateway-58KLB7ZC83IR",
+        "jawsBucket": "jaws.dev.uswest2.stapin.com",
+        "restApiId": "idom83dlvk"
+      }
+    ]
+  }
+}
